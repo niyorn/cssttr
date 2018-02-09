@@ -1,2 +1,68 @@
+:root {
+    --material-shaduw-style-1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --material-shaduw-style-2: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    --primary-color: #29B6F6;
+    --secondary-color: #1DE9B6;
+    --accent-color: #EC407A;
+    --text-color-dark: black;
+    --text-color-light: white;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+:focus {
+    border: 0.2rem solid red;
+    border-radius: 0.1rem;
+}
+
+li {
+    margin-bottom: 1rem;
+    list-style-type: none;
+    font-size: 1.4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+a[href="#main-content"] {
+    opacity: 0;
+}
+
+a:focus[href="#main-content"] {
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+body {
+    background-color: #fff;
+}
+
 .button {
-  background-color: #fff; }
+    background-color: #fff;
+}
+
+nav {
+    background-color: var(--secondary-color);
+}
+
+nav li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+nav li:focus ul, nav li:hover ul {
+    display: block;
+}
+
+:focus {
+    border: 0.2rem solid red;
+    border-radius: 0.1rem;
+}

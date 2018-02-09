@@ -1,0 +1,17 @@
+nav{
+    background-color: var(--secondary-color);
+
+    li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    li:focus, li:hover{
+        ul{
+            display: block;
+        }
+    }
+}

@@ -1,2 +1,35 @@
-@import "modules/all.scss"
+@import "modules/all.scss";
 
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+:focus{
+    border: 0.2rem solid red;
+    border-radius: 0.1rem;
+}
+
+li{
+    margin-bottom: 1rem;
+    list-style-type: none;
+    font-size: 1.4rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+a[href="#main-content"]{
+    opacity: 0;
+}
+a:focus[href="#main-content"]{
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+body{
+    background-color: #fff;
+}

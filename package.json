@@ -4,7 +4,8 @@
   "description": "Nothing yet",
   "main": "gulp.js",
   "dependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-cssbeautify": "^1.0.0"
   },
   "devDependencies": {
     "gulp-rename": "^1.2.2",
