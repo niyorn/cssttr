@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- -----------------------------Begin login.html------------------------- -->
+    <!--change action from '/' to 'start.html', this is done to go to the start.html page-->
+    <form action="start.html" method="post" autofocus="">
+
+        <!--Added a h2 tag to give the form a titel and more context-->
+        <h2>Let's go!</h2>
+
+        <label for="field-email">Email</label>
+        <input type="email" id="field-email" name="field-email" autocomplete="email" autofocus required>
+
+        <label for="field-password">Password</label>
+        <input type="password" id="field-password" name="field-password" required>
+
+        <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
+        <label for="field-stay-logged-in">Stay logged in</label>
+
+        <a href="/">Forgot password</a>
+
+        <button type="submit">Login</button>
+
+    </form>
+    <!-- -----------------------------End login.html------------------------- -->
+
+</body>
+
+</html>

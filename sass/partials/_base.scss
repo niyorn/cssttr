@@ -1,5 +1,14 @@
 @import "modules/all.scss";
 
+@font-face {
+    font-family: Ampersand;
+    src: local('Baskerville-Italic'),
+    local('GoudyOldStyleT-Italic'),
+    local('Palatino-Italic'),
+    local('BookAntiqua-Italic');
+    unicode-range: U+26;
+}
+
 *, *::before, *::after{
     box-sizing: border-box;
     margin: 0;
@@ -8,8 +17,19 @@
 }
 
 :focus{
-    border: 0.2rem solid red;
+    border: 0.2rem solid #FDB4BB;
     border-radius: 0.1rem;
+}
+
+body{
+    display: flex;
+    background-color: #fff;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+h1{
+    font-family: Ampersand, Roboto, sans-serif;
 }
 
 li{
@@ -30,6 +50,23 @@ a:focus[href="#main-content"]{
     transition: opacity 1s;
 }
 
-body{
-    background-color: #fff;
+input{
+    font-size: 1.4em;
+    padding-left: 0.7rem;
+}
+
+label{
+    margin-bottom: 0.4em;
+}
+
+button{
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 1rem;
+    border:none;
+    font-size: 1.3em;
+}
+
+button:hover{
+    cursor: pointer;
 }

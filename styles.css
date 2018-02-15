@@ -8,6 +8,12 @@
     --text-color-light: white;
 }
 
+@font-face {
+    font-family: Ampersand;
+  src: local("Baskerville-Italic"), local("GoudyOldStyleT-Italic"), local("Palatino-Italic"), local("BookAntiqua-Italic");
+  unicode-range: U+26;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -16,8 +22,19 @@
 }
 
 :focus {
-    border: 0.2rem solid red;
+    border: 0.2rem solid #FDB4BB;
     border-radius: 0.1rem;
+}
+
+body {
+    display: flex;
+    background-color: #fff;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: Ampersand, Roboto, sans-serif;
 }
 
 li {
@@ -39,8 +56,25 @@ a:focus[href="#main-content"] {
     transition: opacity 1s;
 }
 
-body {
-    background-color: #fff;
+input {
+    font-size: 1.4em;
+    padding-left: 0.7rem;
+}
+
+label {
+    margin-bottom: 0.4em;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 1rem;
+    border: none;
+    font-size: 1.3em;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 .button {
@@ -62,7 +96,143 @@ nav li:focus ul, nav li:hover ul {
     display: block;
 }
 
-:focus {
-    border: 0.2rem solid red;
-    border-radius: 0.1rem;
+form {
+    display: flex;
+    max-width: 37em;
+    margin: auto;
+    background-color: #fff;
+    box-shadow: var(--material-shaduw-style-2);
+    border-radius: 0.2rem;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    overflow: hidden;
+    transition: all 1s;
+    box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 27em) {
+    form {
+        width: 90vw;
+        opacity: 0;
+        animation: slide-in-from-bottom 1s forwards;
+        min-height: 100%;
+    }
+}
+
+form h2 {
+    font-size: 4em;
+    background-color: var(--primary-color);
+    padding: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-color-light);
+    text-align: center;
+    width: 100%;
+}
+
+form h2 ~ * {
+    width: 100%;
+    margin: 0 1.7rem;
+}
+
+form input {
+    margin-bottom: 2rem;
+}
+
+form input[type='checkbox'] {
+    width: auto;
+    margin-right: 0.7rem;
+}
+
+form input[type='checkbox'] + label {
+    width: auto;
+    margin-left: 0;
+    margin-bottom: 0.3rem;
+}
+
+form label {
+    margin-bottom: 0.4rem;
+}
+
+form button {
+    font-weight: bold;
+    margin: 0;
+}
+
+@media (min-width: 27em) {
+    form button {
+        margin: inherit;
+    }
+}
+
+@keyframes slide-in-from-bottom {
+    0% {
+        opacity: 0;
+        transform: translateY(3vh);
+    }
+
+    30% {
+        transform: translateY(-6vh);
+    }
+
+    60% {
+        transform: translateY(2vh);
+    }
+
+    80% {
+        transform: translateY(-1vh);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.body-start {
+    display: grid;
+    grid-template: 1fr/minmax(10vw, 14em) 1fr;
+    grid-template-areas: "menu main";
+    overflow: initial;
+    max-width: 100vw;
+}
+
+.menu {
+    background: red;
+    grid-area: menu;
+}
+
+main {
+    grid-area: main;
+    background-color: blue;
+    display: grid;
+    grid-template: 24em 1fr 4em/ 100%;
+    grid-template-areas: "jumbotron" "content" "footer";
+}
+
+main div {
+    background-color: green;
+    display: inline-block;
+}
+
+.class1 {
+    background-color: green;
+}
+
+.class2 {
+    background-color: pink;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.class2 div {
+    width: 80vw;
+    max-width: 20em;
+    height: 170px;
+    margin: 1rem;
+    background-color: white;
+}
+
+.class3 {
+    background-color: coral;
 }

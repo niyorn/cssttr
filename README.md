@@ -28,7 +28,7 @@ After that I went researching for techniques that can be implement to make the s
 # To do this weekend
 1. De eerste patterns zijn (responsive) vormgegeven.
 2. De layout-keuzes maken de content prettig in het gebruik
-3. Er is in elk geval gebruik gemaakt van flexbox, grid, en van de technieken uit hoofdstuk 5.25, 6.32, 6.33, 7.36, (7.38), 7.40
+3. Er is in elk geval gebruik gemaakt van flexbox, grid, en van de technieken uit hoofdstuk 6.32, 6.33, 7.36, (7.38), 7.40
 4. De pagina is bruikbaar op oude browsers
 
 ~ Monday: Ask teacher if it's better to create responsive content first or create a resonsive layout to put content in.
