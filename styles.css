@@ -49,11 +49,11 @@ a {
     text-decoration: none;
 }
 
-a[href="#main-content"] {
+a[href="#main"] {
     opacity: 0;
 }
 
-a:focus[href="#main-content"] {
+a:focus[href="#main"] {
     opacity: 1;
     transition: opacity 1s;
 }
