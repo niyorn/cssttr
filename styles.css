@@ -1,6 +1,8 @@
 :root {
     --material-shaduw-style-1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     --material-shaduw-style-2: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    --material-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --material-scale: scale(1.04);
     --primary-color: #29B6F6;
     --secondary-color: #1DE9B6;
     --accent-color: #EC407A;
@@ -83,13 +85,28 @@ button:hover {
 
 nav {
     background-color: var(--secondary-color);
+    grid-area: menu;
+    padding: 1.2rem;
+}
+
+nav ul {
+    position: sticky;
+    top: 1.2rem;
+}
+
+nav h1 {
+    font-size: 300%;
+    font-weight: bold;
 }
 
 nav li {
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
+}
+
+nav li a {
+    font-size: 100%;
 }
 
 nav li:focus ul, nav li:hover ul {
@@ -188,6 +205,7 @@ form button {
     }
 }
 
+/***********************************START PAGE************************************/
 .body-start {
     display: grid;
     grid-template: 1fr/minmax(10vw, 14em) 1fr;
@@ -196,43 +214,104 @@ form button {
     max-width: 100vw;
 }
 
-.menu {
-    background: red;
-    grid-area: menu;
-}
-
 main {
     grid-area: main;
-    background-color: blue;
     display: grid;
-    grid-template: 24em 1fr 4em/ 100%;
-    grid-template-areas: "jumbotron" "content" "footer";
+    grid-template: 32em 1fr 4em/ 100%;
+    grid-template-areas: "jumbotron" "content" "footer";
 }
 
-main div {
+main > article {
     background-color: green;
-    display: inline-block;
+    grid-area: jumbotron;
+    position: relative;
+    overflow: hidden;
 }
 
-.class1 {
-    background-color: green;
+main > article::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(15, 0, 89, 0.36);
 }
 
-.class2 {
-    background-color: pink;
+main > article h1 {
+    position: absolute;
+    font-size: 8vw;
+    text-align: center;
+    font-weight: bolder;
+    z-index: 2;
+    color: var(--text-color-light);
+    width: 100%;
+    padding: 0 7rem;
+    margin-top: 2rem;
+    text-transform: uppercase;
+}
+
+main > article figure {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+main > article video {
+    width: 100%;
+    height: 100%;
+    position: sticky;
+    top: 0;
+    object-fit: cover;
+    display: flex;
+}
+
+main > article figcaption {
+    position: absolute;
+    bottom: 2rem;
+    padding: 0 4rem;
+    color: var(--text-color-light);
+}
+
+main section {
+    grid-area: content;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
-.class2 div {
-    width: 80vw;
-    max-width: 20em;
-    height: 170px;
-    margin: 1rem;
-    background-color: white;
+main section article > a {
+    display: inline-flex;
+    flex-wrap: wrap;
+    box-shadow: var(--material-shaduw-style-1);
+    transition: var(--material-transition);
+    background-color: red;
+    padding: 1rem;
+    max-width: 37em;
+    background-color: #fff;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 
-.class3 {
+main section article > a:hover, main section article > a:focus {
+    box-shadow: var(--material-shaduw-style-2);
+    transform: var(--material-scale);
+    border: none;
+}
+
+main nav {
+    grid-area: footer;
+    display: flex;
+    flex-wrap: wrap;
     background-color: coral;
+    padding: 0;
+}
+
+main nav ol {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
 }

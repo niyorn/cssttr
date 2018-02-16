@@ -11,84 +11,133 @@
 
 <!--There's an added class here because normally the body is an 'block', but on this
     page we want to structure it in a grid :)-->
-<body class="body-start">
 
-    <div class="menu"></div>
-    <main class="main">
-        <div class="class1"></div>
-        <div class="class2">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="class3"></div>
+<body class="body-start">
+    <nav>
+        <ul>
+            <li>
+                <a href="#main" aria-label="Home, current page">Skip to main</a>
+            </li>
+            <li>
+                <a href="/products">Products</a>
+
+                <ul>
+                    <li>
+                        <a href="/products/rock">Rock</a>
+                    </li>
+                    <li>
+                        <a href="/products/paper">Paper</a>
+                    </li>
+                    <li>
+                        <a href="/products/scissors">Scissors</a>
+                    </li>
+                </ul>
+
+            </li>
+            <li>
+                <a href="index.html">Exit</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <main>
+        <article>
+            <h1>Amazon &amp; Wildlife</h1>
+            <figure>
+                <!-- Landscape -->
+                <video autoplay muted loop>
+                    <source src="assets/video/sony_4k.mp4#t=60,140" type="video/mp4">
+                </video>
+                <figcaption>
+                    <p>
+                        A sony production Video
+                    </p>
+                    <footer>
+                        <a href="https://www.youtube.com/watch?v=rN6nlNC9WQA">Sony</a>
+                    </footer>
+                </figcaption>
+            </figure>
+        </article>
+
+        <section id="main">
+            <article>
+                <!--I've put the anchor tag around other element, because I want whole anchor item to be clickable-->
+                <a href="">
+                    <h1>
+                        HTML5 accessibility, are block links hurting accessibility?
+                    </h1>
+                    <img src="https://vasilis.nl/voto/fotos/klein/161001180558-de-boot-gemist-150.jpg" alt="A colorful crayon drawing on the hood of a car."
+                    />
+                    <p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs,
+                        this was forbidden in previous versions of HTML. A recent article by @feather concludes that the
+                        inclusion of block level elements inside a link causes some Assistive Technology (AT) to misbehave.</p>
+                </a>
+            </article>
+
+            <article>
+                <!--I've put the anchor tag around other element, because I want whole anchor item to be clickable-->
+                <a href="">
+                    <h1>
+                        HTML5 accessibility, are block links hurting accessibility?
+                    </h1>
+                    <img src="https://vasilis.nl/voto/fotos/klein/161001180558-de-boot-gemist-150.jpg" alt="A colorful crayon drawing on the hood of a car."
+                    />
+                    <p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs,
+                        this was forbidden in previous versions of HTML. A recent article by @feather concludes that the
+                        inclusion of block level elements inside a link causes some Assistive Technology (AT) to misbehave.</p>
+                </a>
+            </article>
+
+            <article>
+                <!--I've put the anchor tag around other element, because I want whole anchor item to be clickable-->
+                <a href="">
+                    <h1>
+                        HTML5 accessibility, are block links hurting accessibility?
+                    </h1>
+                    <img src="https://vasilis.nl/voto/fotos/klein/161001180558-de-boot-gemist-150.jpg" alt="A colorful crayon drawing on the hood of a car."
+                    />
+                    <p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs,
+                        this was forbidden in previous versions of HTML. A recent article by @feather concludes that the
+                        inclusion of block level elements inside a link causes some Assistive Technology (AT) to misbehave.</p>
+                </a>
+            </article>
+
+            <article>
+                <!--I've put the anchor tag around other element, because I want whole anchor item to be clickable-->
+                <a href="">
+                    <h1>
+                        HTML5 accessibility, are block links hurting accessibility?
+                    </h1>
+                    <img src="https://vasilis.nl/voto/fotos/klein/161001180558-de-boot-gemist-150.jpg" alt="A colorful crayon drawing on the hood of a car."
+                    />
+                    <p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs,
+                        this was forbidden in previous versions of HTML. A recent article by @feather concludes that the
+                        inclusion of block level elements inside a link causes some Assistive Technology (AT) to misbehave.</p>
+                </a>
+            </article>
+        </section>
+
+
+        <nav id="step-indicator">
+                <h1>Finish your order</h1>
+                <progress value="0.25" max="1">25%</progress>
+    
+                <ol>
+                    <li>
+                        <a href="/cart">Cart</a>
+                    </li>
+                    <li>
+                        <a href="#main-content" aria-label="Address, current step">Address</a>
+                    </li>
+                    <li>
+                        Payment
+                    </li>
+                    <li>
+                        Confirm
+                    </li>
+                </ol>
+            </nav>
     </main>
 
 </body>
