@@ -1,65 +1,4 @@
-    <h1>Living &amp; Styleguide</h1>
 
-    <!-- place components or patterns here -->
-    <!-- -----------------------------Begin navigation.html------------------------- -->
-    <a id="top" href="#main-content">
-        Skip to main content
-    </a>
-
-    <nav>
-        <h1>Main navigation</h1>
-
-        <ul>
-            <li>
-                <a href="#main-content" aria-label="Home, current page">Home</a>
-            </li>
-            <li>
-                <a href="/products">Products</a>
-
-                <ul>
-                    <li>
-                        <a href="/products/rock">Rock</a>
-                    </li>
-                    <li>
-                        <a href="/products/paper">Paper</a>
-                    </li>
-                    <li>
-                        <a href="/products/scissors">Scissors</a>
-                    </li>
-                </ul>
-
-            </li>
-            <li>
-                <a href="/about">About</a>
-            </li>
-            <li>
-                <a href="/contact">Contact</a>
-            </li>
-            <li>
-                <a href="#media-item">Media Item</a>
-            </li>
-            <li>
-                <a href="#picture-with-subtitel">Titel: beast mode</a>
-            </li>
-            <li>
-                <a href="#rating">Rating</a>
-            </li>
-            <li>
-                <a href="#login">Login</a>
-            </li>
-            <li>
-                <a href="#step-indicator">Step indicator</a>
-            </li>
-            <li>
-                <a href="#chat">chat</a>
-            </li>
-
-        </ul>
-
-    </nav>
-    <!-- -----------------------------End navigation.html------------------------- -->
-
-    <main id="main-content">
         <!-- -----------------------------Begin media-item.html------------------------- -->
         <article id="media-item">
             <h1>
@@ -90,7 +29,7 @@
                         also replace the photo with a video if needed.
                     </p>
                     <footer>
-                        <time datetime="2017-02-06">6-2-2017</time> © 2017
+                        <time datetime="2017-02-06">6-2-2017</time> ï¿½ 2017
                         <a href="https://vasilis.nl">Vasilis van Gemert</a>
                     </footer>
                 </figcaption>

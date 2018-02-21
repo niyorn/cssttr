@@ -1,11 +1,30 @@
+/************************Navigation***********************************/
+
 nav{
-    background-color: var(--secondary-color);
     grid-area: menu;
-    padding: 1.2rem;
+    p{
+        font-size: 4em;
+        color:var(--text-color-light);
+        background-color: var(--secondary-color);
+        padding: 0.7rem;
+        height: 9rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 900;
+    }
     
     ul{
-        position: sticky;
-        top: 1.2rem;
+        padding: 0.7rem;
+
+        ul{
+            padding-left: 1rem;
+            padding-bottom: 0;
+
+            li:last-of-type{
+                margin-bottom: 0
+            }
+        }
     }
 
     h1{
@@ -15,12 +34,33 @@ nav{
 
     li{
         display: flex;
-        justify-content: center;
-        flex-direction: column;
-
+        flex-wrap: wrap;
         a{
+            display: flex;
             font-size: 100%;
+            color: rgba(0,0,0,.7);
+            transition: all 0.4s;
+            &::before{
+                content: "";
+                height: 100%;
+                width: 0.4rem;
+                background-color: var(--secondary-color);
+                display: inline-block;
+                margin-right: 0.2rem;
+                transform: scale(0);
+                transition: all 0.4s;
+            }
+            &:hover, &:focus{
+                outline: none;
+                border:none;
+
+                &:before{
+                    transform: scale(1)
+                }
+            }
+
         }
+
     }
 
     li:focus, li:hover{

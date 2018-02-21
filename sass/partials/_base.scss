@@ -19,6 +19,7 @@
 :focus{
     border: 0.2rem solid #FDB4BB;
     border-radius: 0.1rem;
+    outline: none;
 }
 
 body{
@@ -40,6 +41,7 @@ li{
 
 a{
     text-decoration: none;
+    color: var(--text-color-dark);
 }
 
 a[href="#main-content"]{

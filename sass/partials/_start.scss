@@ -11,13 +11,15 @@
 main {
     grid-area: main;
     display: grid;
-    grid-template: 32em 1fr 4em/ 100%;
+    grid-template: 32em 1fr minmax(2em, max-content)/ 100%;
     grid-template-areas: "jumbotron" "content" "footer";
     >article {
-        background-color: green;
         grid-area: jumbotron;
         position: relative;
-        overflow: hidden; //overlay
+        overflow: hidden; 
+        display: flex;
+        justify-content: center;
+        //overlay
         &::after {
             content: "";
             position: absolute;
@@ -25,18 +27,17 @@ main {
             bottom: 0;
             left: 0;
             right: 0;
-            background-color: rgba(15, 0, 89, 0.36);
+            background-color: rgba(15, 0, 89, 0.76);
         }
         h1 {
             position: absolute;
-            font-size: 8vw;
+            font-size: 6vw;
             text-align: center;
             font-weight: bolder;
             z-index: 2;
             color: var(--text-color-light);
-            width: 100%;
-            padding: 0 7rem;
-            margin-top: 2rem;
+            width: 60%;
+            margin-top: 4rem;
             text-transform: uppercase;
         }
         figure {
@@ -67,23 +68,53 @@ main {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        background-color: #f0f0f0;
+        padding: 4rem 1rem 1rem 1rem;
         article {
+            position: relative;
+            overflow: hidden;
+            &::before{
+                content: '';;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: var(--secondary-color);
+                animation: slide-away 1s 0.2s forwards ease-in ;
+            }
             >a {
                 display: inline-flex;
                 flex-wrap: wrap;
-                box-shadow: var(--material-shaduw-style-1);
                 transition: var(--material-transition);
-                background-color: red;
-                padding: 1rem;
-                max-width: 37em;
-                background-color: #fff;
+                max-width: 24em;
                 margin-bottom: 2rem;
-                margin-top: 1rem;
-                &:hover,
-                &:focus {
-                    box-shadow: var(--material-shaduw-style-2);
-                    transform: var(--material-scale);
+                background-color: rgba(255, 255, 255, 0.37);
+                transition: color 0.4s;
+                &:hover, &:focus {
                     border: none;
+                    background-color: #fff;
+                    img{
+                        transform: translatex(0);
+                        background-color:var(--secondary-color);
+                    }
+                }
+
+                img{
+                    order: -1;
+                    display: inline-block;
+                    width: 100%;
+                    height: 17em;
+                    object-fit: contain;
+                    transform: translatex(-4em);
+                    transition: all 0.4s;
+                }
+
+                h1{
+                    padding: 2rem;
+                }
+
+                p{
+                    padding: 0 2rem 2rem 2rem;
                 }
             }
         }
@@ -93,13 +124,46 @@ main {
         grid-area: footer;
         display: flex;
         flex-wrap: wrap;
-        background-color: coral;
         padding: 0;
+        padding: 1rem;
+
+        h1{
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
 
         ol{
             display: flex;
             flex-wrap: wrap;
             margin-left: auto;
+            width: 100%;
+            justify-content: center;
+            margin-top: 1rem;
+
+            a{
+                font-size: 1.2em;
+            }
         }
+
+        progress{
+            width: 100%;
+            border:none;
+            margin-top: 1rem;
+        }
+
+        progress::-moz-progress-bar {
+            background-color: green;
+        }
+    }
+}
+
+@keyframes slide-away{
+    from{
+        transform: translatex(0);
+    }
+
+    to{
+        transform: translatex(100%);
     }
 }
