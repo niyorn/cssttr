@@ -3,7 +3,7 @@
     --material-shaduw-style-2: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     --material-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     --material-scale: scale(1.04);
-    --primary-color: #29B6F6;
+    --primary-color: #FF9800;
     --secondary-color: #00E5FF;
     --accent-color: #EC407A;
     --text-color-dark: black;
@@ -99,11 +99,11 @@ nav p {
 }
 
 nav ul {
-    padding: 0.7rem;
+    width: 100%;
 }
 
 nav ul ul {
-    padding-left: 1rem;
+    padding-left: 1.4rem;
     padding-bottom: 0;
 }
 
@@ -119,13 +119,16 @@ nav h1 {
 nav li {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 0;
 }
 
 nav li a {
     display: flex;
     font-size: 100%;
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(0, 0, 0, 0.6);
     transition: all 0.4s;
+    width: 100%;
+    padding: 1rem;
 }
 
 nav li a::before {
@@ -142,6 +145,8 @@ nav li a::before {
 nav li a:hover, nav li a:focus {
     outline: none;
     border: none;
+    color: var(--text-color-dark);
+    background-color: #dfdfdf;
 }
 
 nav li a:hover:before, nav li a:focus:before {
@@ -177,7 +182,7 @@ form {
 
 form h2 {
     font-size: 4em;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     padding: 2rem;
     margin-bottom: 1rem;
     color: var(--text-color-light);
@@ -199,6 +204,10 @@ form input[type='checkbox'] {
     margin-right: 0.7rem;
 }
 
+form input[type='checkbox']:focus, form input[type='checkbox']:hover {
+    border: solid 0.2rem var(--secondary-color);
+}
+
 form input[type='checkbox'] + label {
     width: auto;
     margin-left: 0;
@@ -212,6 +221,7 @@ form label {
 form button {
     font-weight: bold;
     margin: 0;
+    background-color: var(--secondary-color);
 }
 
 @media (min-width: 27em) {
@@ -258,6 +268,7 @@ main {
     display: grid;
     grid-template: 32em 1fr minmax(2em, max-content)/100%;
     grid-template-areas: "jumbotron" "content" "footer";
+    position: relative;
 }
 
 main > article {
@@ -310,9 +321,20 @@ main > article video {
 
 main > article figcaption {
     position: absolute;
+    z-index: 2;
     bottom: 2rem;
     padding: 0 4rem;
     color: var(--text-color-light);
+}
+
+main > article figcaption a {
+    color: var(--secondary-color);
+    transition: all 0.7s;
+}
+
+main > article figcaption a:hover, main > article figcaption a:focus {
+    border: 0.3rem solid var(--secondary-color);
+    transform: scale(1.2);
 }
 
 main section {
@@ -322,11 +344,16 @@ main section {
     justify-content: space-evenly;
     background-color: #f0f0f0;
     padding: 4rem 1rem 1rem 1rem;
+    position: relative;
 }
 
 main section article {
     position: relative;
     overflow: hidden;
+    max-width: 24em;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 main section article::before {
@@ -337,6 +364,7 @@ main section article::before {
     height: 100%;
     background-color: var(--secondary-color);
     animation: slide-away 1s 0.2s forwards ease-in;
+    z-index: 2;
 }
 
 main section article > a {
@@ -346,7 +374,7 @@ main section article > a {
     max-width: 24em;
     margin-bottom: 2rem;
     background-color: rgba(255, 255, 255, 0.37);
-    transition: color 0.4s;
+    transition: color 2s;
 }
 
 main section article > a:hover, main section article > a:focus {
@@ -375,6 +403,144 @@ main section article > a h1 {
 
 main section article > a p {
     padding: 0 2rem 2rem 2rem;
+}
+
+main section article fieldset {
+    display: flex;
+    border: none;
+    padding: 2rem;
+    justify-content: space-evenly;
+    margin-top: auto;
+}
+
+main section article fieldset input[type=radio] {
+    transition: all 0.7s;
+    opacity: 0;
+}
+
+main section article fieldset input[type=radio]:hover + label, main section article fieldset input[type=radio]:focus + label {
+    border: solid 0.2rem var(--secondary-color);
+}
+
+main section article fieldset input[type=radio]:checked + label {
+    transform: scale(1.2);
+    animation: jumping 1s infinite alternate;
+}
+
+main section article fieldset label {
+    width: 20%;
+}
+
+main section article fieldset legend {
+    padding-bottom: 0.4rem;
+    border-bottom: solid 0.2rem black;
+    width: 100%;
+}
+
+main div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+
+main div div {
+    transition: all 0.7s;
+}
+
+main div section {
+    visibility: hidden;
+    pointer-events: none;
+    width: 40em;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    padding: 1rem;
+    opacity: 0;
+    transform: translate(100%, 100%);
+    transition: all 1s;
+}
+
+main div section form {
+    box-shadow: none;
+}
+
+main div > label {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 1rem;
+    right: 2rem;
+    pointer-events: initial;
+    cursor: pointer;
+    transition: all 0.7s;
+    background-color: var(--primary-color);
+    padding: 1rem;
+    box-shadow: var(--material-shaduw-style-2);
+    border-radius: 0.4rem;
+    z-index: 2;
+    color: var(--text-color-light);
+    border: solid 0.4rem transparent;
+}
+
+main div > label:before {
+    content: "start: ";
+}
+
+main div > label:focus, main div > label:hover {
+    border-color: red;
+}
+
+main ol {
+    width: 100%;
+}
+
+main textarea {
+    width: 100%;
+}
+
+main button[type=submit] {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+main input[type=checkbox] {
+    transform: translatex(-10vw);
+}
+
+main input[type=checkbox]:hover ~ label, main input[type=checkbox]:focus ~ label {
+    border-color: var(--secondary-color);
+}
+
+main input[type=checkbox]:checked ~ section {
+    background-color: white;
+    box-shadow: var(--material-shaduw-style-2);
+    visibility: visible;
+    pointer-events: initial;
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+main input[type=checkbox]:checked ~ label {
+    transform: translate(0, -28.6em);
+    border: solid 0.4rem var(--secondary-color);
+}
+
+main input[type=checkbox]:checked ~ label:before {
+    content: "stop: ";
+}
+
+main input[type=checkbox]:checked ~ div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    filter: blur(3px) contrast(0.8) brightness(0.8);
+    z-index: -1;
+    transform: scale(1);
 }
 
 main nav {
@@ -421,5 +587,15 @@ main nav progress::-moz-progress-bar {
 
     to {
         transform: translatex(100%);
+    }
+}
+
+@keyframes jumping {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.7);
     }
 }

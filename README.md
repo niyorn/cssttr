@@ -25,8 +25,22 @@ When making the HTML, I made sure that every components is accessible with the k
 
 Also I **removed** to **autofocus** from the login form, because else, it will jump immediately to the form, but we don't want that. 
 
-After that I went researching for techniques that can be implement to make the site more accessible. [WebAIM](https://webaim.org/techniques/skipnav/#maincontent) give us an example: a link that let the user skip the navigation and go immediately to the main content. I find this an usefull feature so I immediately implemented on the site. To achieve this. I've wrapped everything (except the navigation) into a main tag. And implemented an achor that bring us to the main content. Thereafter have I implemented a  **back to top**  button that bring us back to the beginning of the page.
+After that I went researching for techniques that can be implement to make the site more accessible. [WebAIM](https://webaim.org/techniques/skipnav/#maincontent) give us an example: a link that let the user skip the navigation and go immediately to the main content. I find this an usefull feature so I immediately implemented on the site. To achieve this. I've wrapped everything (except the navigation) into a main tag. And implemented an achor that bring us to the main content. 
 ![Skip to main](read-me-assets/skip-to-main.gif "Skip to main")
 
-# To do this weekend
-3. Er is in elk geval gebruik gemaakt van flexbox, grid, en van de technieken uit hoofdstuk 6.32, 6.33, 7.36, (7.38), 7.40
+# grid
+After immplemented the basic funtion I designed the grid layout to put the component in. 
+
+The initital design was to be able to horizontal scroll in the main content, but sommehow the content never overflow so we were not able to accomplish it. 
+So instead I just set a maximum width and the user is able to scroll up and down.
+![Grid layout](read-me-assets/problem-grid-scroll.gif "Skip to main")
+
+*after*
+![Grid layout](read-me-assets/progress-little-content.png "Skip to main")
+
+
+# What have I learned
+Creating a layout with CSS Grid and making use of the _grid-template-area_ to gives name to the grid. And assign components in the area.
+
+## inspiration
+https://codepen.io/dsenneff/full/QajVxO/

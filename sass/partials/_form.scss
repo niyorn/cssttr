@@ -21,7 +21,7 @@ form{
 
     h2{
         font-size: 4em;
-        background-color: var(--primary-color);
+        background-color: var(--secondary-color);
         padding: 2rem;
         margin-bottom: 1rem;
         color: var(--text-color-light);
@@ -42,6 +42,10 @@ form{
         width: auto;
         margin-right: 0.7rem;
 
+        &:focus, &:hover{
+            border:solid 0.2rem var(--secondary-color);
+        }
+
         &+label{
             width: auto;
             margin-left: 0;
@@ -56,6 +60,7 @@ form{
     button{
         font-weight: bold;
         margin: 0;
+        background-color: var(--secondary-color);
 
         @media (min-width: 27em){
             margin: inherit;
